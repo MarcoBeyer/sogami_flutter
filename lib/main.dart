@@ -6,7 +6,7 @@ import 'package:sogami_flutter/ui/screens/home.dart';
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _navigatorKey = GlobalKey<NavigatorState>();
 
-void main() {
+void main() async {
   runApp(const SogamiApp());
 }
 

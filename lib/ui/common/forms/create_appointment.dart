@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sogami_flutter/ui/common/models/appointment.dart';
+import 'package:sogami_flutter/ui/common/models/sogami_page.dart';
+
+import '../models/user.dart';
 
 class CreateAppointmentForm extends StatefulWidget {
   const CreateAppointmentForm({super.key, required this.onCreate});
 
-  final void Function(Appointment) onCreate;
+  final void Function(SogamiPage) onCreate;
 
   @override
   State<CreateAppointmentForm> createState() => _CreateAppointmentFormState();
@@ -73,8 +75,18 @@ class _CreateAppointmentFormState extends State<CreateAppointmentForm> {
               onPressed: () {
                 if (formKey.currentState!.validate()) {
                   formKey.currentState!.save();
-                  widget.onCreate(Appointment(
-                      person: selectedValue!, notes: notesController.text));
+                  widget.onCreate(SogamiPage.newPage(
+                    parentId: 'database-1',
+                    createdBy: User(
+                      id: 'user-1',
+                      name: 'Max Mustermann',
+                      type: 'user',
+                    ),
+                    properties: {
+                      'person': selectedValue!,
+                      'notes': notesController.text
+                    },
+                  ));
                 }
               },
               child: const Text('Submit'),

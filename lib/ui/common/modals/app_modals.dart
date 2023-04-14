@@ -19,6 +19,14 @@ class FormModal extends StatelessWidget {
     return Dialog.fullscreen(
       child: Column(
         children: [
+          Row(
+            children: [
+              IconButton(
+                onPressed: () => Navigator.of(context).pop(),
+                icon: const Icon(Icons.close),
+              ),
+            ],
+          ),
           Expanded(
             child: Column(
               children: [
