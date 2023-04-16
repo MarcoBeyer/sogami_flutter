@@ -35,6 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     pages.add(SogamiPage(
         properties: {},
+        title: 'Treffen',
         id: 'page-1',
         parentId: 'database-1',
         lastModifiedBy: user,
@@ -112,8 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
               itemCount: pages.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: Text(pages[index].createdBy.name),
-                  subtitle: Text(pages[index].id),
+                  title: Text(pages[index].properties['person'] ?? 'No person'),
+                  subtitle: Text(pages[index].properties['notes'] ?? 'No notes'),
                 );
               }),
         ],

@@ -1,13 +1,12 @@
 import 'package:isar/isar.dart';
 import 'package:sogami_flutter/ui/common/models/sogami_child_document.dart';
+import 'package:sogami_flutter/ui/common/models/sogami_link.dart';
 import 'package:uuid/uuid.dart';
 
-import 'sogami_block.dart';
-
-@collection
 class SogamiPage extends SogamiChildDocument {
   SogamiPage(
-      {required this.properties,
+      {required this.title,
+      required this.properties,
       required super.id,
       required super.parentId,
       required super.lastModifiedBy,
@@ -17,7 +16,8 @@ class SogamiPage extends SogamiChildDocument {
       : super(baseType: "page");
 
   SogamiPage.newPage(
-      {required this.properties,
+      {required this.title,
+      required this.properties,
       required super.parentId,
       required super.createdBy})
       : super(
@@ -26,6 +26,8 @@ class SogamiPage extends SogamiChildDocument {
             lastModifiedBy: createdBy,
             createdOn: DateTime.now(),
             lastModifiedOn: DateTime.now());
-  List<SogamiBlock> blocks = [];
+  String title;
+  List<SogamiLink> links = [];
+  List<String> blockIds = [];
   Map<String, dynamic> properties;
 }
