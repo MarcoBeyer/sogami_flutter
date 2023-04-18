@@ -21,11 +21,12 @@ class _AppScaffoldState extends State<AppScaffold> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'Entdecken',
           ),
+          // add button with plus icon
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.auto_graph),
+            label: 'Netzwerk',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),

@@ -1,4 +1,3 @@
-import 'package:isar/isar.dart';
 import 'package:sogami_flutter/ui/common/models/sogami_child_document.dart';
 import 'package:sogami_flutter/ui/common/models/sogami_link.dart';
 import 'package:uuid/uuid.dart';
